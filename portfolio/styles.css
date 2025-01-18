@@ -1,0 +1,282 @@
+/* Основные стили */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #24194a;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #b6a6ed;
+}
+
+.page-container {
+  max-width: 1200px; /* Ограничиваем ширину */
+  margin: 0 auto; /* Центрируем по горизонтали */
+  padding: 20px; /* Внутренние отступы */
+  position: relative; /* Для стрелочки */
+}
+
+.main-container {
+  display: flex; /* Используем Flexbox */
+  flex-direction: column; /* Элементы располагаются вертикально */
+  justify-content: center; /* Центрируем по вертикали */
+  align-items: center; /* Центрируем по горизонтали */
+  height: 100vh; /* Высота контейнера = высоте окна */
+  text-align: center; /* Текст выровнен по центру */
+}
+
+
+.avatar img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  color: #9986d9;
+}
+
+.links a {
+  margin: 20px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #6651db;
+}
+
+/* Ссылки на другие страницы */
+.link {
+  text-decoration: none; /* Убираем подчеркивание */
+  color: #6651db; /* Цвет текста по умолчанию */
+  transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+/* Цвет текста при наведении */
+.link:hover {
+  color: #d1cbf2; /* Цвет текста при наведении (замени на нужный) */
+}
+
+footer {
+  margin-top: 30px;
+}
+
+.image-container {
+  width: 100%;
+  max-width: 600px; /* Ограничение ширины контейнера */
+  height: 400px; /* Высота контейнера */
+  overflow: hidden; /* Скрытие части изображения, выходящей за пределы */
+  position: relative; /* Для точного контроля за позиционированием */
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down; /* Изображение заполнит весь контейнер, сохраняя пропорции */
+}
+
+.small-image {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+/* Контейнер для социальных ссылок */
+.social-links {
+  margin-top: 20px;
+  display: flex; /* Flexbox для выравнивания */
+  justify-content: center; /* Центрируем ссылки */
+  gap: 15px; /* Расстояние между иконками */
+}
+
+/* Родительский контейнер */
+.center-container {
+  display: flex; /* Включаем Flexbox */
+  flex-direction: column; /* Вертикальное расположение элементов */
+  align-items: center; /* Центрируем по горизонтали */
+  justify-content: flex-start; /* Располагаем элементы ближе к верху */
+  height: 100vh; /* Высота на весь экран */
+  position: relative; /* Относительное позиционирование для поддержки absolute внутри */
+  padding-top: 50px; /* Отступ сверху для заголовка и описания */
+}
+
+/* Стили для заголовка */
+.center-title {
+  margin: 0 0 10px; /* Убираем отступы сверху и добавляем снизу */
+  font-size: 2.5rem; /* Размер шрифта заголовка */
+  text-align: center; /* Выравнивание текста */
+}
+
+/* Стили для описания */
+.center-description {
+  margin: 0; /* Убираем отступы */
+  font-size: 1.2rem; /* Размер шрифта описания */
+  text-align: center; /* Выравнивание текста */
+}
+
+/* Ссылка (контейнер для изображения) */
+.social-link {
+  display: inline-block;
+  transition: transform 0.3s ease; /* Анимация при наведении */
+}
+
+/* Иконки социальных сетей */
+.social-icon {
+  width: 40px; /* Размер иконки */
+  height: 40px;
+  object-fit: contain; /* Убирает искажение изображения */
+  transition: filter 0.3s ease; /* Эффект при наведении */
+}
+
+/* Эффект при наведении */
+.social-link:hover {
+  transform: scale(1.1); /* Увеличение */
+}
+
+.social-link:hover .social-icon {
+  filter: brightness(1.2); /* Осветляем иконку */
+}
+
+
+/* Стиль для страниц */
+.page-container {
+  position: relative;
+}
+, .portfolio-grid h1 {
+  font-size: 2rem;
+}
+
+/* Стиль для стрелочек */
+.back-arrow,
+.next-arrow {
+  position: absolute;
+  top: 20px; /* Отступ от верхнего края */
+  font-size: 2rem; /* Размер стрелочек */
+  color: #6651db; /* Цвет стрелочек */
+  text-decoration: none;
+  background-color: transparent; /* Без фона */
+  padding: 10px 15px; /* Удобные отступы */
+  border-radius: 5px; /* Скругленные края */
+  transition: background-color 0.3s, color 0.3s; /* Плавная анимация */
+  z-index: 10; /* Чтобы стрелочки были поверх других элементов */
+}
+
+/* Позиционирование стрелочек */
+.back-arrow {
+  left: 20px; /* Отступ от левого края */
+}
+
+.next-arrow {
+  right: 20px; /* Отступ от правого края */
+}
+
+/* Эффект при наведении */
+.back-arrow:hover,
+.next-arrow:hover {
+  background-color: #6651db; /* Заливка фона при наведении */
+  color: #d1cbf2; /* Цвет текста при наведении */
+}
+
+/* Стиль для стрелочек для мобильных экранов */
+@media (max-width: 768px) {
+  .back-arrow,
+  .next-arrow {
+    font-size: 1.5rem; /* Уменьшаем размер для мобильных */
+    padding: 8px 12px; /* Меньшие отступы */
+  }
+}
+
+/* Общие стили для контейнера блоков */
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  grid-template-rows: repeat(4, auto); /* 4 ряда */
+  gap: 40px; /* Расстояние между блоками */
+  grid-template-areas: "block1 block2 block3" 
+                       "block4 block5 block6"
+                       "block7 block8 block9"
+                       "block10 block11 ."; /* Для последнего ряда с двумя крупными блоками */
+}
+
+/* Общие стили для контейнера блоков */
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  grid-template-rows: repeat(4, auto); /* 4 ряда */
+  gap: 40px; /* Расстояние между блоками */
+  grid-template-areas: "block1 block2 block3" 
+                       "block4 block5 block6"
+                       "block7 block8 block9"
+                       "block10 block11 ."; /* Для последнего ряда с двумя крупными блоками */
+}
+
+/* Общие стили для контейнера блоков */
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  grid-template-rows: repeat(4, auto); /* 4 ряда */
+  gap: 40px; /* Расстояние между блоками */
+  grid-template-areas: "block1 block2 block3" 
+                       "block4 block5 block6"
+                       "block7 block8 block9"
+                       "block10 block11 ."; /* Для последнего ряда с двумя крупными блоками */
+}
+
+/* Стиль для каждого элемента */
+.portfolio-item {
+  width: 100%; /* Растягиваем блок на всю ширину родителя */
+  position: relative; /* Для абсолютного позиционирования изображения */
+  overflow: hidden; /* Скрываем изображение, выходящее за пределы блока */
+  border: 1px solid #ddd; /* Пример рамки */
+  aspect-ratio: 16 / 9; /* Устанавливаем соотношение сторон для блока (например, 16:9) */
+  max-width: 100%; /* Убираем ограничения по максимальной ширине */
+  min-height: 300px; /* Минимальная высота блока */
+}
+
+/* Стиль изображения внутри блока */
+.portfolio-item img {
+  object-fit: cover; /* Изображение заполняет блок, обрезая лишнее */
+  object-position: center; /* Центрирование изображения */
+  display: block; /* Убираем ненужные отступы */
+}
+
+/* Индивидуальные стили для блоков */
+.portfolio-item:nth-child(10), 
+.portfolio-item:nth-child(11) {
+  grid-column: span 3; /* Эти блоки растягиваются на 3 колонки */
+  aspect-ratio: 21 / 9; /* Пропорции 21:9 для широких блоков */
+  min-height: 250px; /* Минимальная высота */
+}
+
+.portfolio-item:nth-child(10) img, 
+.portfolio-item:nth-child(11) img {
+  object-fit: cover; /* Изображение заполняет блок, сохраняя пропорции */
+  object-position: center; /* Центрирование изображения */
+}
+
+button.prev:hover,
+button.next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Общие стили для анимации */
+.fade-in {
+  opacity: 0; /* Скрыто изначально */
+  transform: translateY(20px); /* Смещение вниз */
+  animation: fadeIn 1s ease forwards; /* Анимация появления */
+  animation-delay: var(--delay, 0s); /* Индивидуальная задержка */
+}
+
+/* Ключевые кадры анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+}
+
